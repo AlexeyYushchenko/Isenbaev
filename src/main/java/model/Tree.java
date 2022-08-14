@@ -6,8 +6,6 @@ import java.nio.file.Path;
 import java.util.*;
 import java.util.stream.Collectors;
 
-//It took 2.40 to finish this task.
-
 public class Tree {
     private final List<Player> players = new ArrayList<>();
 
