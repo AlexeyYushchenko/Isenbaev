@@ -4,8 +4,7 @@ import java.util.*;
 
 public class Player {
     private final String name;
-    private List<Player> playedWith = new ArrayList<>();
-
+    private final Set<Player> teammates = new HashSet<>();
     public Player(String name) {
         this.name = name;
     }
@@ -14,12 +13,13 @@ public class Player {
         return name;
     }
 
-    public boolean setPlayedWith(Player player){
-        if (!this.playedWith.contains(player)){
-            this.playedWith.add(player);
-            return true;
-        }
-        return false;
+    public void setPlayedWith(Player player){
+            this.teammates.add(player);
+            player.teammates.add(this);
+    }
+
+    public Set<Player> getTeammates() {
+        return teammates;
     }
 
     @Override
@@ -40,30 +40,33 @@ public class Player {
         return name;
     }
 
-    public String getNumber(){
-        List<Player> visited = new ArrayList<>();
-        int counter1 = 1;
+    public String getNumberOfHandshakes(){
         int layer = 0;
-        int counter2 = 0;
+        int nodesToNextLayer = 1;
+        int nextLayerNodes = 0;
+        List<Player> visited = new ArrayList<>();
         Queue<Player> queue = new ArrayDeque<>();
+
         queue.add(this);
         visited.add(this);
         while (!queue.isEmpty()) {
-            if (counter1 == 0) {
+            if (nodesToNextLayer == 0) {
                 layer++;
-                counter1 = counter2;
-                counter2 = 0;
+                nodesToNextLayer = nextLayerNodes;
+                nextLayerNodes = 0;
             }
+
             Player next = queue.poll();
-            counter1--;
             if (next.getName().equalsIgnoreCase("Isenbaev")) return String.valueOf(layer);
-            for (Player teammate : next.playedWith){
+
+            for (Player teammate : next.teammates){
                 if (!visited.contains(teammate)){
                     queue.add(teammate);
                     visited.add(teammate);
-                    counter2++;
+                    nextLayerNodes++;
                 }
             }
+            nodesToNextLayer--;
         }
         return "undefined";
     }
