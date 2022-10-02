@@ -1,14 +1,28 @@
-Владислав Исенбаев — двукратный чемпион Урала по программированию, вице-чемпион TopCoder Open 2009, абсолютный чемпион ACM ICPC 2009. За то время, которое вы потратите на чтение этого условия, Владислав уже решил бы одну задачу. А может, и две…
-Поскольку Владислав Исенбаев — выпускник СУНЦ УрГУ, неудивительно, что многие из бывших и действующих олимпиадников УрГУ знакомы с ним уже много лет. Некоторые из них с гордостью заявляют, что играли с Владиславом в одной команде. Или играли в команде с бывшими однокомандниками Владислава…
-Определим число Исенбаева следующим образом. У самого Владислава это число равняется нулю. У тех, кто играл с ним в одной команде, оно равняется единице. У тех, кто играл вместе с однокомандниками Владислава, но не играл с ним самим, это число равняется двум, и так далее. Помогите автоматизировать процесс вычисления чисел Исенбаева, чтобы каждый олимпиадник в УрГУ мог знать, насколько близок он к чемпиону ACM ICPC.
+Problem.
+Vladislav Isenbaev is a two-time programming champion of the Urals, vice-champion of TopCoder Open 2009, 
+absolute champion of ACM ICPC 2009. In the time you spend reading this condition, 
+Vladislav would have already solved one problem. Or maybe two...
+Since Vladislav Isenbaev is a graduate of the USU SUNC, it is not surprising that many of the former 
+and current USU Olympiads have known him for many years. Some of them proudly declare that they played 
+with Vladislav in the same team. Or played in a team with Vladislav's former teammates ...
+We define the Isenbaev number as follows. Vladislav himself has this number equal to zero. 
+For those who played with him on the same team, it is equal to one. 
+For those who played together with Vladislav's teammates, but did not play with him himself, 
+this number is two, and so on. Help automate the process of calculating Isenbaev's numbers 
+so that every olympiad at USU can know how close he is to the ACM ICPC champion.
 
-Исходные данные
-В первой строке записано целое число n — количество команд (1 ≤ n ≤ 100). В каждой из следующих n строк записаны составы этих команд в виде фамилий трёх участников. Фамилия каждого участника — непустая строка, состоящая из английских букв, длиной не более 20 символов. Первая буква фамилии — заглавная, все остальные — строчные. Фамилия Владислава — «Isenbaev».
+Initial data
+The first line contains an integer n — the number of commands (1 ≤ n ≤ 100). 
+Each of the next n lines contains the compositions of these teams in the form of the names of three participants. 
+The last name of each participant is a non-empty string consisting of English letters, no more than 20 characters long. 
+The first letter of the surname is capital, all the rest are lowercase. Vladislav's surname is "Isenbaev".
 
-Результат
-Для каждого участника, представленного во входных данных, выведите в отдельной строке через пробел его фамилию и число Исенбаева. Если это число не определено, выведите вместо него «undefined». Участники должны быть упорядочены по фамилии в лексикографическом порядке.
+Result
+For each participant presented in the input, print on a separate line his last name and Isenbaev's number separated by a space. 
+If this number is not defined, print "undefined" instead. 
+Participants must be ordered by last name in lexicographic order.
 
-Пример исходных данных
+Sample Input
 7
 Isenbaev Oparin Toropov
 Ayzenshteyn Oparin Samsonov
@@ -18,7 +32,7 @@ Dublennykh Fominykh Ivankov
 Burmistrov Dublennykh Kurpilyanskiy
 Cormen Leiserson Rivest
 
-Ответ 
+Sample Output 
 Ayzenshteyn 2
 Burmistrov 3
 Chevdar 3
